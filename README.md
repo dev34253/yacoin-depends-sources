@@ -18,5 +18,6 @@ make -C depends download SOURCES_PATH=/tmp/sources    # in the code repository; 
 gh release upload sources /tmp/sources/<file_name> --repo dev34253/yacoin-depends-sources
 ```
 
-Then regenerate `SHA256SUMS` from all assets and upload it with `--clobber`. Files that no recipe pins any more stay, so older commits
+Then regenerate `SHA256SUMS` from all assets and upload it with `--clobber`. If `gh release create` or `upload` loses its connection, the
+release can be left a draft, whose asset URLs answer 404: check with `gh release view sources --json isDraft` and upload what is missing. Files that no recipe pins any more stay, so older commits
 still build.
