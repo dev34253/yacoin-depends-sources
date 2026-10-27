@@ -7,7 +7,7 @@ that release as `FALLBACK_DOWNLOAD_PATH`, so a build fetches a file from here wh
 - Each asset is stored under the recipe's `$(package)_file_name`, byte for byte as the original host served it. The recipe's
   `$(package)_sha256_hash` is checked after every download, so this mirror cannot change what is built.
 - `SHA256SUMS` lists every asset with its SHA-256.
-- The scheduled workflow in the code repository checks that every source the recipes pin is here with the pinned hash.
+- The code repository checks, on every change to `depends/`, that every source the recipes pin is here with the pinned hash.
 
 ## Adding a file
 
